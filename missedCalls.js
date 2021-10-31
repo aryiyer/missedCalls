@@ -17,7 +17,7 @@ importXLS() takes in the ID of a folder which should contain the desired XLS fil
 and performs the conversion, creating a new Google spreadsheet file in the destination folder.
 */
 function importXLS(){
-  var files = DriveApp.getFolderById('0AC6FhBwrPRjfUk9PVA').searchFiles('title contains "Call History"'); //original folder containing xls file
+  var files = DriveApp.getFolderById('********').searchFiles('title contains "Call History"'); //original folder containing xls file
   if (files.hasNext()){
     var xFile = files.next();
     var name = xFile.getName();
@@ -25,7 +25,7 @@ function importXLS(){
       var xBlob = xFile.getBlob(); //gets data
       var newFileConfig = {
         title : name+'_converted',
-        parents: [{id: '1q1_aqBbDHKM3BehYJvN637yWlALAu_ch'}],
+        parents: [{id: '********'}],
         mimeType: MimeType.GOOGLE_SHEETS //  Added
       };
       spreadsheet = Drive.Files.insert(newFileConfig, xBlob);
@@ -104,9 +104,9 @@ function removeFromList(inputList, number){
 
 
 
-var rootIdVar = scrapeId('https://drive.google.com/drive/u/0/folders/0AC6FhBwrPRjfUk9PVA');
+var rootIdVar = scrapeId('https://drive.google.com/drive/u/0/folders/********');
 Logger.log(rootIdVar);
-const destinationId = scrapeId('https://drive.google.com/drive/folders/1q1_aqBbDHKM3BehYJvN637yWlALAu_ch');
+const destinationId = scrapeId('https://drive.google.com/drive/folders/********');
 Logger.log(destinationId);
 importXLS();
 
