@@ -7,3 +7,5 @@ An algorithm adds only the calls that went unaddressed to an array, and returns 
 
 This script was made to be implemented as part of a larger set of code, the array will be used to send follow-up
 messages to unattended calls.
+
+This script will not work as I have censored sensitive data!
